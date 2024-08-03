@@ -1,0 +1,50 @@
+{
+  "env": {
+    "browser": true,
+    "es2020": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint"
+  ],
+  "settings": {
+    "react": {
+      "version": "18.x"
+    }
+  },
+  "rules": {
+    "linebreak-style": "off",
+        "@typescript-eslint/no-explicit-any": "warn",
+        "@typescript-eslint/ban-types": [
+            "error",
+            {
+                "extendDefaults": true,
+                "types": {
+                    "{}": false
+                }
+            }
+        ],
+        "react-hooks/exhaustive-deps": "off",
+        "object-shorthand": "error",
+        "no-console": "warn",
+        "no-shadow": "off",
+        "no-undef": "off",
+        "react/react-in-jsx-scope": "off",
+        "react/jsx-uses-react": "off"
+  }
+}
