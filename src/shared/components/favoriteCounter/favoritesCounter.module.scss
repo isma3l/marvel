@@ -1,0 +1,11 @@
+@import 'src/styles/base/colors';
+
+.favoritesCounter {
+    display: flex;
+
+    &__counter {
+        color: $white;
+        margin-left: 8px;
+        margin-top: 6px;
+    }
+}

@@ -45,6 +45,6 @@
           "@/*": ["./src/*"]
         }
     },
-    "include": ["src/**/*.ts", "src/**/*.tsx", "declaration.d.ts"],
+    "include": ["src/**/*.ts", "src/**/*.tsx", "src/types/scss.d.ts", "./src/types/svg.d.ts"],
     "exclude": ["node_modules", "coverage", "webpack.*.js", "dist", "./__jest__/*"]
 }
