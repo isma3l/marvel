@@ -1,15 +1,18 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import './styles.scss';
 import { FcLike } from "react-icons/fc";
 import { FaRegHeart } from "react-icons/fa";
 
 import md5 from "md5";
 import { Header } from '@/shared/components/header/Header';
+import { SearchBar } from './shared/components/searchBar/SearchBar';
 /*
 import MarvelLogo from '@/assets/images/marvel_logo';
 */
 
 const App = () => {
+    const [query, setQuery] = useState('');
+
     useEffect(() => {
         const heroes = async () => {
             try {
@@ -34,6 +37,8 @@ const App = () => {
             <FcLike size={20}/>
             <FaRegHeart color="white" size={18} />
             <FcLike size={20} />
+
+            <SearchBar query={query} setQuery={setQuery} results={50}/>
             
 
         </div>

@@ -1,0 +1,24 @@
+@import 'src/styles/base/mixins';
+@import 'src/styles/base/colors';
+@import 'src/styles/base/fonts';
+
+.search {
+    display: flex;
+    border: 0;
+    border-bottom: 2px solid $black;
+    padding-bottom: 7px;
+    border-radius: 0;
+    margin-bottom: 12px;
+
+    &__input {
+        width: 100%;
+        border: none;
+        margin-left: 10px;
+
+        @include font ($gray, $font-size-m)
+    }
+
+    &__results {
+        @include font ($black, $font-size-xs)
+    }
+}

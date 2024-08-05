@@ -1,4 +1,6 @@
+@import 'src/styles/base/mixins';
 @import 'src/styles/base/colors';
+@import 'src/styles/base/fonts';
 
 .favoritesCounter {
     display: flex;
@@ -7,5 +9,7 @@
         color: $white;
         margin-left: 8px;
         margin-top: 6px;
+
+        @include font ($white, $font-size-m)
     }
 }
