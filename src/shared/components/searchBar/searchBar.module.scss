@@ -14,8 +14,8 @@
         width: 100%;
         border: none;
         margin-left: 10px;
-
-        @include font ($gray, $font-size-m)
+        outline: none;
+       @include font ($black, $font-size-m);
     }
 
     &__results {

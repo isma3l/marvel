@@ -1,0 +1,36 @@
+@import 'src/styles/base/mixins';
+@import 'src/styles/base/colors';
+@import 'src/styles/base/fonts';
+
+.card {
+    height: 246px;
+    width: 173px;
+    background-color: $black;
+    clip-path: polygon(0 0, 100% 0, 100% 94%, 92% 100%, 0 100%);
+
+    &__header {
+        display: flex;
+        border-bottom: solid $red 5px;
+    }
+
+    &__thumbail {
+        width: 100%;
+        height: 185px;
+    }
+
+    &__content {
+        background-color: $black;
+        padding: 16px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__title {
+        color: $white;
+        @include font ($white, $font-size-s)
+    }
+
+    @include large {
+        width: 189px;
+    }
+}
