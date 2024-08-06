@@ -13,9 +13,12 @@
         border-bottom: solid $red 5px;
     }
 
+    &__imgWrapper {
+        height: 185px;
+    }
+
     &__thumbail {
         width: 100%;
-        height: 185px;
     }
 
     &__content {

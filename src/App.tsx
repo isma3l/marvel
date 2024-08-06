@@ -7,11 +7,13 @@ import md5 from "md5";
 import { Header } from '@/shared/components/header/Header';
 import { SearchBar } from './shared/components/searchBar/SearchBar';
 import { HeroCard, HeroList } from './shared/components';
+import { RouterProvider } from 'react-router-dom';
+import Router from './router';
 
 /*
 import MarvelLogo from '@/assets/images/marvel_logo';
 */
-
+/*
 const App = () => {
     const [query, setQuery] = useState('');
 
@@ -55,5 +57,9 @@ const App = () => {
         </div>
     );
 }
+
+*/
+
+const App = () => <RouterProvider router={Router} />
 
 export default App;

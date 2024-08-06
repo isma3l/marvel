@@ -14,7 +14,9 @@ export const HeroCard = ({ hero }: CardProps) => {
     return (
         <article className={styles.card}>
             <header className={styles.card__header} >
-                <img src={hero.thumbail} alt="Hero image" className={styles.card__thumbail} />
+                <figure className={styles.card__imgWrapper}>
+                    <img src={hero.thumbail} alt="Hero image" className={styles.card__thumbail} />
+                </figure>
             </header>
             <section className={styles.card__content}>
                 <span className={styles.card__title}>{hero.name}</span>

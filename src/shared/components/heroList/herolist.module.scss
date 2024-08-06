@@ -5,11 +5,10 @@
 .heroList {
     display: grid;
     gap: 16px;
-    justify-items: center;
     grid-template-columns: repeat(2, 1fr);
 
     @include small {
-        grid-template-columns: repeat(auto-fill, minmax(189px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(189px, 1fr));
     }
 
 
