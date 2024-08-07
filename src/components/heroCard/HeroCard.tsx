@@ -2,8 +2,7 @@ import { FcLike } from "react-icons/fc";
 // import { FaRegHeart } from "react-icons/fa";
 //             <FaRegHeart color="white" size={18} />
 
-import { Hero } from "@/shared/models";
-
+import { Hero } from '@/domain';
 import * as styles from './herocard.module.scss';
 
 type CardProps = {

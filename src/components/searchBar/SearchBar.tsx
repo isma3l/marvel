@@ -1,5 +1,4 @@
 import { IoIosSearch } from "react-icons/io";
-
 import * as styles from './searchBar.module.scss';
 
 type SearchBarProps = {

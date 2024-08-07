@@ -1,4 +1,4 @@
-import { Hero } from "@/shared/models";
+import { Hero } from "@/domain";
 import { HeroCard } from "../heroCard/HeroCard";
 import * as styles from './herolist.module.scss';
 

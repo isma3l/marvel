@@ -1,14 +1,14 @@
-import { useEffect, useState } from 'react';
+//import { useEffect, useState } from 'react';
 import './styles.scss';
-import { FcLike } from "react-icons/fc";
+/* import { FcLike } from "react-icons/fc";
 import { FaRegHeart } from "react-icons/fa";
 
 import md5 from "md5";
-import { Header } from '@/shared/components/header/Header';
-import { SearchBar } from './shared/components/searchBar/SearchBar';
-import { HeroCard, HeroList } from './shared/components';
+import { Header } from '@/components/header/Header';
+import { SearchBar } from './components/searchBar/SearchBar';
+import { HeroCard, HeroList } from './components'; */
 import { RouterProvider } from 'react-router-dom';
-import Router from './router';
+import Router from './routes';
 
 /*
 import MarvelLogo from '@/assets/images/marvel_logo';

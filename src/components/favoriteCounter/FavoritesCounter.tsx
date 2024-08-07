@@ -1,5 +1,4 @@
 import { FcLike } from "react-icons/fc";
-
 import * as styles from './favoritesCounter.module.scss';
 
 export const FavoritesCounter = () => {

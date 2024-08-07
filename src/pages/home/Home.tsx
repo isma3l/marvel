@@ -1,4 +1,4 @@
-import { HeroList, SearchBar } from "@/shared/components";
+import { HeroList, SearchBar } from "@/components";
 import { Hero } from "@/shared/models";
 import { useState } from "react";
 
