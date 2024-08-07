@@ -1,0 +1,11 @@
+@import 'src/styles/base/mixins';
+
+.content {
+    max-width: 1416px;
+    padding: 24px 16px;
+    margin: auto;
+
+    @include sm {
+        padding: 48px 48px;
+    }
+}

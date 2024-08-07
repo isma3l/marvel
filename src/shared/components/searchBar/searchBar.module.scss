@@ -3,19 +3,27 @@
 @import 'src/styles/base/fonts';
 
 .search {
-    display: flex;
-    border: 0;
-    border-bottom: 2px solid $black;
-    padding-bottom: 7px;
-    border-radius: 0;
-    margin-bottom: 12px;
+    height: 77px;
+    padding: 12px 0;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+    
+    &__content {
+        display: flex;
+        border: 0;
+        border-bottom: 2px solid $black;
+        padding-bottom: 7px;
+        border-radius: 0;
+        margin-bottom: 8px;
+    }
 
     &__input {
         width: 100%;
         border: none;
         margin-left: 10px;
         outline: none;
-       @include font ($black, $font-size-m);
+        text-transform: uppercase;
+        @include font ($black, $font-size-m);
     }
 
     &__results {

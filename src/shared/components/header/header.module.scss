@@ -8,7 +8,7 @@
     background-color: $black;
     padding: 16px;
     
-    @include small {
+    @include sm {
         padding: 16px 48px;
     }
 

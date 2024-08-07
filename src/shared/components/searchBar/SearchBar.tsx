@@ -15,8 +15,8 @@ export const SearchBar = ({ query, setQuery, results }: SearchBarProps) => {
     }
 
     return (
-            <section role='search'>
-                <div className={styles.search}>
+            <section role='search' className={styles.search}>
+                <div className={styles.search__content}>
                     <label htmlFor='search'>
                         <IoIosSearch />
                     </label>

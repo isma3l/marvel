@@ -2,6 +2,7 @@ import { HeroList, SearchBar } from "@/shared/components";
 import { Hero } from "@/shared/models";
 import { useState } from "react";
 
+import * as styles from './home.module.scss';
 
 const list: Hero[] = [
     {id: 1, name: 'flash 3D', thumbail: 'https://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784.jpg', isFavorite: false},
@@ -18,7 +19,7 @@ export const Home = () => {
     const [query, setQuery] = useState('');
 
     return (
-        <section>
+        <section className={styles.content}>
             <SearchBar query={query} setQuery={setQuery} results={50}/>
             <HeroList heroes={list} />
         </section>

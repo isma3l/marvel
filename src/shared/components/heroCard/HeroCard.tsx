@@ -13,8 +13,8 @@ type CardProps = {
 export const HeroCard = ({ hero }: CardProps) => {
     return (
         <article className={styles.card}>
-            <header className={styles.card__header} >
-                <figure className={styles.card__imgWrapper}>
+            <header>
+                <figure className={styles.card__thumWrapper}>
                     <img src={hero.thumbail} alt="Hero image" className={styles.card__thumbail} />
                 </figure>
             </header>
