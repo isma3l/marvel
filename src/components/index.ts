@@ -1,4 +1,4 @@
-export { Header } from './header/Header';
-export { HeroCard } from './heroCard/HeroCard';
-export { HeroList } from './heroList/HeroList';
-export { SearchBar } from './searchBar/SearchBar';
+export { Header } from './header';
+export { HeroCard } from './heroCard';
+export { HeroList } from './heroList';
+export { SearchBar } from './searchBar';

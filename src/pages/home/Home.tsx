@@ -1,5 +1,5 @@
 import { HeroList, SearchBar } from "@/components";
-import { Hero } from "@/shared/models";
+import { Hero } from "@/domain";
 import { useState } from "react";
 
 import * as styles from './home.module.scss';
@@ -15,7 +15,7 @@ const list: Hero[] = [
     {id: 8, name: 'flash 3D', thumbail: 'https://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784.jpg', isFavorite: false}
 ]
 
-export const Home = () => {
+const Home = () => {
     const [query, setQuery] = useState('');
 
     return (
@@ -25,3 +25,5 @@ export const Home = () => {
         </section>
     );
 }
+
+export default Home;

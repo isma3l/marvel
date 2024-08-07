@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
 import { Paths } from './paths';
-import { MainLayout } from '@/layout/main/Main';
+import { MainLayout } from '@/layout';
 
 const LazyHome = lazy(
     () => import(/*webpackChunkName: "LazyHome"  */ '@/pages/home')
