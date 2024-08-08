@@ -25,7 +25,7 @@ const App = () => {
                 const publicKey = 'f3e6f65a011e69240141f03c0f872874';
                 const hash = md5(`${timestamp}${privateKey}${publicKey}`);
                 const extra = `limit=50&ts=${timestamp}&apikey=${publicKey}&hash=${hash}`;
-               // const response = await fetch(`http://gateway.marvel.com/v1/public/characters?${extra}`);
+                const response = await fetch(`http://gateway.marvel.com/v1/public/characters?${extra}`);
                 
                 const data = await response.json();
                 console.log("data", data);

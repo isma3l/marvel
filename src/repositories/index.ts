@@ -1,0 +1,1 @@
+export { apiHeroRepository } from './ApiHeroRepository';

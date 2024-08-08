@@ -5,16 +5,16 @@ import { FcLike } from "react-icons/fc";
 import { Hero } from '@/domain';
 import * as styles from './herocard.module.scss';
 
-type CardProps = {
+type HeroProps = {
     hero: Hero;
 }
 
-export const HeroCard = ({ hero }: CardProps) => {
+export const HeroCard = ({ hero }: HeroProps) => {
     return (
         <article className={styles.card}>
             <header>
                 <figure className={styles.card__thumWrapper}>
-                    <img src={hero.thumbail} alt="Hero image" className={styles.card__thumbail} />
+                    <img src={`${hero.thumbnail.path}.${hero.thumbnail.extension}`} alt="Hero image" className={styles.card__thumbail} />
                 </figure>
             </header>
             <section className={styles.card__content}>

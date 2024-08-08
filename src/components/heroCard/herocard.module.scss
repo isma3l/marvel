@@ -25,9 +25,11 @@
         height: 100%;
         object-fit: cover;
         object-position: top center;
+        transition: all .2s linear;
     }
 
     &__content {
+        height: 56px;
         background-color: $black;
         padding: 16px;
         display: flex;
@@ -37,6 +39,7 @@
 
     &__title {
         color: $white;
+        text-transform: uppercase;
         @include font ($white, $font-size-s)
     }
 }

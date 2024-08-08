@@ -1,16 +1,26 @@
 import { IoIosSearch } from "react-icons/io";
 import * as styles from './searchBar.module.scss';
+import { useState } from "react";
 
 type SearchBarProps = {
-    query: string;
-    setQuery: (value: string) => void;
+    onSearch: (value: string) => void;
     results: number;
 }
 
-export const SearchBar = ({ query, setQuery, results }: SearchBarProps) => {
+const KEY_START_SEARCH = 'Enter';
+
+export const SearchBar = ({ results, onSearch }: SearchBarProps) => {
+    const [query, setQuery] = useState<string>('');
+
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const { value } = event.target;
         setQuery(value);
+    }
+
+    const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        if (event.key == KEY_START_SEARCH) {
+            onSearch(query);
+        }        
     }
 
     return (
@@ -25,6 +35,7 @@ export const SearchBar = ({ query, setQuery, results }: SearchBarProps) => {
                         type="text"
                         value={query}
                         onChange={handleChange}
+                        onKeyDown={handleKeyDown}
                         placeholder='SEARCH A CHARACTER...'
                         autoComplete="off"
                         className={styles.search__input}

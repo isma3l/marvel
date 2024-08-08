@@ -1,6 +1,6 @@
 import { HeroList, SearchBar } from "@/components";
 import { Hero } from "@/domain";
-import { useState } from "react";
+import { useSearchHerores } from '@/hooks';
 
 import * as styles from './home.module.scss';
 
@@ -16,12 +16,12 @@ const list: Hero[] = [
 ]
 
 const Home = () => {
-    const [query, setQuery] = useState('');
+    const { heroes, searchHeroes, isLoading } = useSearchHerores();
 
     return (
         <section className={styles.content}>
-            <SearchBar query={query} setQuery={setQuery} results={50}/>
-            <HeroList heroes={list} />
+            <SearchBar onSearch={searchHeroes} results={heroes.length}/>
+            { isLoading ? "Cargando" : <HeroList heroes={heroes} /> }
         </section>
     );
 }

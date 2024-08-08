@@ -1,0 +1,1 @@
+export { buildEnpoint } from './endpointBuilder';
