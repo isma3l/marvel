@@ -5,6 +5,10 @@
     padding: 24px 16px;
     margin: auto;
 
+    &__loader {
+        display: flex;
+        justify-content: center;
+    }
     @include sm {
         padding: 48px 48px;
     }

@@ -1,4 +1,4 @@
-import { HeroList, SearchBar } from "@/components";
+import { HeroList, SearchBar, Spinner } from "@/components";
 import { Hero } from "@/domain";
 import { useSearchHerores } from '@/hooks';
 
@@ -14,14 +14,20 @@ const list: Hero[] = [
     {id: 7, name: 'flash 3D', thumbail: 'https://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784.jpg', isFavorite: false},
     {id: 8, name: 'flash 3D', thumbail: 'https://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784.jpg', isFavorite: false}
 ]
-
+///*{ isLoading ? "Cargando" : <HeroList heroes={heroes} /> }
 const Home = () => {
     const { heroes, searchHeroes, isLoading } = useSearchHerores();
 
     return (
         <section className={styles.content}>
             <SearchBar onSearch={searchHeroes} results={heroes.length}/>
-            { isLoading ? "Cargando" : <HeroList heroes={heroes} /> }
+            { isLoading ? 
+                <div className={styles.content__loader}>
+                    <Spinner />
+                </div>
+                : 
+                <HeroList heroes={heroes} /> 
+            }
         </section>
     );
 }

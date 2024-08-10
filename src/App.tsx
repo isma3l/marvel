@@ -9,6 +9,7 @@ import { SearchBar } from './components/searchBar/SearchBar';
 import { HeroCard, HeroList } from './components'; */
 import { RouterProvider } from 'react-router-dom';
 import Router from './routes';
+import { HeroesProvider } from './context';
 
 /*
 import MarvelLogo from '@/assets/images/marvel_logo';
@@ -60,6 +61,11 @@ const App = () => {
 
 */
 
-const App = () => <RouterProvider router={Router} />
+const App = () => (
+    <HeroesProvider>
+        <RouterProvider router={Router} />
+    </HeroesProvider>
+);
+
 
 export default App;

@@ -5,6 +5,7 @@ const Dotenv = require('dotenv-webpack');
 module.exports = {
     entry: "./src/index.tsx",
     mode: "development",
+    devtool: "cheap-module-source-map",
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, './dist'),
