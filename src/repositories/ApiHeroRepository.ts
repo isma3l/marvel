@@ -132,14 +132,15 @@ const getHeroes = async (name?: string): Promise<Hero[]> => {
     const searchName = name ? `&nameStartsWith=${name}` : '';
     const finalUrl = buildEnpoint(`${apiUrl}characters?limit=${LIMIT_RESULTS}${searchName}`);
     
-    const heroes = await get<Hero[]>(finalUrl);
-    //const heroes = await test();
-    return heroes.map(hero => ({ id: hero.id, name: hero.name, thumbnail: hero.thumbnail }));
+    // -> const heroes = await get<Hero[]>(finalUrl);
+    const heroes = await test();
+    // ->return heroes.map(hero => ({ id: hero.id, name: hero.name, thumbnail: hero.thumbnail }));
 /*     if (name) {
         return heroes.filter(hero => hero.name.toUpperCase().includes(name.toUpperCase()));
     } else {
         return heroes.map(hero => ({ id: hero.id, name: hero.name, thumbnail: hero.thumbnail }));
     } */
+        return heroes;
     
 }
 

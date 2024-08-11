@@ -3,6 +3,7 @@
 @import 'src/styles/base/fonts';
 
 .card {
+    $root: &;
     clip-path: polygon(0 0, 100% 0, 100% 93%, 91% 100%, 0 100%);
 
     &__thumWrapper {
@@ -41,5 +42,14 @@
         color: $white;
         text-transform: uppercase;
         @include font ($white, $font-size-s)
+    }
+
+    &__icon {
+        height: 16px;
+        padding: 0 1px;
+
+        #{$root}:hover & {
+            cursor: pointer;
+        }
     }
 }

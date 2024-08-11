@@ -1,15 +1,16 @@
 import { FcLike } from "react-icons/fc";
-// import { FaRegHeart } from "react-icons/fa";
-//             <FaRegHeart color="white" size={18} />
-
+import { FaRegHeart } from "react-icons/fa";
 import { Hero } from '@/domain';
 import * as styles from './herocard.module.scss';
+import { useHeroesContext } from "@/hooks";
 
 type HeroProps = {
     hero: Hero;
 }
 
 export const HeroCard = ({ hero }: HeroProps) => {
+    const { addHero, removeHero } = useHeroesContext();
+
     return (
         <article className={styles.card}>
             <header>
@@ -19,7 +20,12 @@ export const HeroCard = ({ hero }: HeroProps) => {
             </header>
             <section className={styles.card__content}>
                 <span className={styles.card__title}>{hero.name}</span>
-                <FcLike size={12}/>
+                <span className={styles.card__icon}>
+                    { hero.isFavorite 
+                        ? <FcLike size={13} onClick={() => removeHero(hero.id)}/>
+                        : <FaRegHeart color="white" size={13} onClick={() => addHero(hero)}/>
+                    }                    
+                </span>                
             </section>
         </article>
     );

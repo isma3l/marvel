@@ -22,7 +22,7 @@ export const SearchBar = ({ results, onSearch }: SearchBarProps) => {
             onSearch(query);
         }        
     }
-
+    
     return (
             <section role='search' className={styles.search}>
                 <div className={styles.search__content}>
