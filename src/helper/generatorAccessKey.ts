@@ -1,11 +1,11 @@
 import md5 from "md5";
 
-export const buildEnpoint = (baseUrl: string) => {
+export const generateAccessKey = () => {
     const timestamp = Date.now();
     const privateKey = process.env['PRIVATE_KEY'];
     const publicKey = process.env['PUBLIC_KEY'];
     const hash = md5(`${timestamp}${privateKey}${publicKey}`);
-    const queryString = `&ts=${timestamp}&apikey=${publicKey}&hash=${hash}`;
+    const accessKey = `ts=${timestamp}&apikey=${publicKey}&hash=${hash}`;
 
-    return `${baseUrl}${queryString}`;
+    return accessKey;
 }

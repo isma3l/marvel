@@ -1,4 +1,4 @@
-export type MarvelResponse<T> = {
+export type HeroResponse<T> = {
     code: number;
     status: string;
     data: {

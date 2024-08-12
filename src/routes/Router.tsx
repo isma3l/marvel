@@ -7,6 +7,10 @@ const LazyHome = lazy(
     () => import(/*webpackChunkName: "LazyHome"  */ '@/pages/home')
 );
 
+const LazyDetails = lazy(
+    () => import(/*webpackChunkName: "LazyHome"  */ '@/pages/details')
+);
+
 export const Router = createBrowserRouter([
     {
         path: Paths.base,
@@ -17,6 +21,14 @@ export const Router = createBrowserRouter([
                 element: (
                     <Suspense>
                         <LazyHome />
+                    </Suspense>
+                )
+            },
+            {
+                path: Paths.hero,
+                element: (
+                    <Suspense>
+                        <LazyDetails />
                     </Suspense>
                 )
             }

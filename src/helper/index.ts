@@ -1,1 +1,1 @@
-export { buildEnpoint } from './endpointBuilder';
+export { generateAccessKey } from './generatorAccessKey';

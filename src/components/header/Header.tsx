@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useHeroesContext } from '@/hooks';
-import { FavoritesCounter } from '../favoriteCounter';
-import { Logo } from '../logo';
+import { FavoritesCounter } from './favoriteCounter';
+import { Logo } from './logo';
 import { Paths } from '@/routes/paths';
 import * as styles from './header.module.scss';
 

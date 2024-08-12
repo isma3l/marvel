@@ -1,0 +1,51 @@
+@import 'src/styles/base/mixins';
+@import 'src/styles/base/colors';
+@import 'src/styles/base/fonts';
+
+.banner {
+    background: $black;
+    display: flex;
+    flex-direction: column;
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 95% 100%, 0 100%);
+
+    &__thumWrapper{
+        height: 397px;
+
+        @include sm {
+            height: 278px;
+        }
+    
+        @include xl {
+            height: 320px;
+        }
+    }
+
+    &__thumbnail {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    &__contentDescription {
+        padding: 24px 16px 48px 16px;
+        background-color: $black;
+    }
+
+    &__contentTitle {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 24px;
+    }
+
+    &__title {
+        @include font ($white, $font-size-xl);
+        text-transform: uppercase;
+    }
+
+    &__description {
+        @include font ($white, $font-size-m);
+        line-height: 18.75px;
+    }
+    
+}

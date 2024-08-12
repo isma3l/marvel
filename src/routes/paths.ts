@@ -1,5 +1,5 @@
 export const Paths = {
     base: '/',
-    detail: '/detail/'    
+    hero: '/hero/:heroId'    
   };
   

@@ -1,6 +1,6 @@
 import { get } from "@/api";
 import { Hero, HeroRepository } from "@/domain";
-import { buildEnpoint } from '@/helper';
+import { generateAccessKey } from '@/helper';
 
 const LIMIT_RESULTS = 50;
 
@@ -128,20 +128,41 @@ const test = async (): Promise<Hero[]> => {
 }
 
 const getHeroes = async (name?: string): Promise<Hero[]> => {
-    const apiUrl = process.env['API_BASE'];
+    const baseUrl = process.env['BASE_URL'];
     const searchName = name ? `&nameStartsWith=${name}` : '';
-    const finalUrl = buildEnpoint(`${apiUrl}characters?limit=${LIMIT_RESULTS}${searchName}`);
+    const url = `${baseUrl}characters?limit=${LIMIT_RESULTS}${searchName}&${generateAccessKey()}`;
     
-    // -> const heroes = await get<Hero[]>(finalUrl);
-    const heroes = await test();
+    //return get<Hero[]>(url);
+    
+    ///const heroes = await test();
     // ->return heroes.map(hero => ({ id: hero.id, name: hero.name, thumbnail: hero.thumbnail }));
 /*     if (name) {
         return heroes.filter(hero => hero.name.toUpperCase().includes(name.toUpperCase()));
     } else {
         return heroes.map(hero => ({ id: hero.id, name: hero.name, thumbnail: hero.thumbnail }));
     } */
-        return heroes;
-    
+    return mock;
+   
 }
 
-export const apiHeroRepository: HeroRepository = { getHeroes };
+const mockHero: Hero = {
+    id: 1017100,
+    name: "A-Bomb (HAS)",
+    thumbnail: {
+        path: "http://i.annihil.us/u/prod/marvel/i/mg/3/20/5232158de5b16",
+        extension: "jpg"
+    },
+    description: "Rick Jones has been Hulk's best bud since day one, but now he's more than a friend...he's a teammate! Transformed by a Gamma energy explosion, A-Bomb's thick, armored skin is just as strong and powerful as it is blue. And when he curls into action, he uses it like a giant bowling ball of destruction!"
+}
+
+const getHeroById = async (heroId: number): Promise<Hero> => {
+    const baseUrl = process.env['BASE_URL'];
+    const url = `${baseUrl}characters/${heroId}?${generateAccessKey()}`;
+        
+    //const heroes = await get<Hero[]>(url);
+    //const { id, name, thumbnail, description = ''} = heroes[0];
+    //return { id, name, thumbnail, description };
+    return mockHero;
+}
+
+export const apiHeroRepository: HeroRepository = { getHeroes, getHeroById };

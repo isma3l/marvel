@@ -5,4 +5,5 @@ export interface Hero {
     name: string;
     thumbnail: Thumbnail;
     isFavorite?: boolean;
+    description?: string;
 }
