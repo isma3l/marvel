@@ -1,5 +1,5 @@
 import { Hero } from "@/domain";
-import { HeroCard } from "../heroCard/HeroCard";
+import { HeroCard } from "./heroCard/HeroCard";
 import * as styles from './herolist.module.scss';
 
 type HeroListProps = {

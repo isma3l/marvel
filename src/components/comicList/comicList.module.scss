@@ -1,0 +1,37 @@
+@import 'src/styles/base/mixins';
+@import 'src/styles/base/colors';
+@import 'src/styles/base/fonts';
+
+.comics {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 16px 12px;
+
+    @include md {
+        padding: 0 0 16px 48px;
+    }
+
+    @include xl {
+        width: 65%;
+        padding: 0 0 16px 0;
+    }
+
+    &__title {
+        @include font ($black, $font-size-l, 700);
+        text-transform: uppercase;
+        padding: 48px 0 24px 0;
+        
+        @include xl {
+            @include font ($black, $font-size-xl, 700);
+        }
+
+    }
+
+    &__list {
+        display: flex;
+        overflow: scroll;
+        scrollbar-color: $red $white;
+        padding-bottom: 24px;
+        gap: 12px;
+    }
+}

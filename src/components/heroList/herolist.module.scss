@@ -4,28 +4,27 @@
 
 .heroList {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 16px;
     grid-row-gap: 16px;
-    grid-template-columns: repeat(auto-fit, minmax(31%, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(31%, 1fr));
 
     @include sm {
-        grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
     }
 
     @include md {
-        grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
     }
 
     @include lg {
-        grid-template-columns: repeat(auto-fit, minmax(18%, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(18%, 1fr));
     }
 
     @include xl {
-        grid-template-columns: repeat(auto-fit, minmax(15%, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(15%, 1fr));
     }
 
     @include xxl {
-        grid-template-columns: repeat(auto-fit, minmax(13%, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(13%, 1fr));
     }
 }

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Hero } from '@/domain';
-import { ToggleFavorite } from "../toggleFavorite";
+import { ToggleFavorite } from "../../toggleFavorite";
 import * as styles from './herocard.module.scss';
 
 type HeroProps = {

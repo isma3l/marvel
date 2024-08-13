@@ -1,0 +1,10 @@
+@import 'src/styles/base/mixins';
+
+.details {
+    display: flex;
+    flex-direction: column;
+
+    @include xl {
+        align-items: center;
+    }
+}

@@ -1,0 +1,51 @@
+@import 'src/styles/base/mixins';
+@import 'src/styles/base/colors';
+@import 'src/styles/base/fonts';
+///h: 246 w: 164 - h: 253 w: 169 - h:269 w: 179
+
+.comic {
+    display: flex;
+    flex-direction: column;
+    width: 164px;
+
+    @include md {
+        width: 168px
+    }
+
+    @include xl {
+        width: 179px;
+    }
+
+    &__thumWrapper {
+        height: 246px;
+        width: 164px;
+        margin-bottom: 8px;
+
+        @include md {
+            height: 253px;
+            width: 168px;
+        }
+
+        @include xl {
+            height: 268px;
+            width: 179px;
+        }
+    }
+
+    &__thumbnail {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        transition: all .2s linear;
+    }
+
+    &__title {
+        @include font ($black, $font-size-m);
+        line-height: 18.75px;
+    }
+
+    &__year {
+        @include font ($black, $font-size-xs);
+        line-height: 14px; 
+    }
+}

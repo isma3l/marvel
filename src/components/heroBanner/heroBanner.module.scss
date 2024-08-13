@@ -3,16 +3,39 @@
 @import 'src/styles/base/fonts';
 
 .banner {
-    background: $black;
     display: flex;
-    flex-direction: column;
-    clip-path: polygon(0 0, 100% 0, 100% 95%, 95% 100%, 0 100%);
+    justify-content: center;
+    background: $black;
+    clip-path: polygon(0 0, 100% 0, 100% 96%, 95% 100%, 0 100%);
+
+    @include md {
+        clip-path: polygon(0 0, 100% 0, 100% 91%, 98% 100%, 0 100%);
+    }
+
+    @include xl {
+        clip-path: polygon(0 0, 100% 0, 100% 92%, 98% 100%, 0 100%);
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+
+        @include md {
+            flex-direction: row;
+        }
+
+        @include xl {
+            width: 65%;
+        }
+    }
 
     &__thumWrapper{
         height: 397px;
 
-        @include sm {
+        @include md {
             height: 278px;
+            max-width: 320px;
+            flex: 1;
         }
     
         @include xl {
@@ -30,6 +53,15 @@
     &__contentDescription {
         padding: 24px 16px 48px 16px;
         background-color: $black;
+
+        @include md {
+            padding: 48px;
+            flex: 2;
+        }
+
+        @include xl {
+            padding: 48px 0 48px 48px;
+        }
     }
 
     &__contentTitle {
@@ -39,7 +71,7 @@
     }
 
     &__title {
-        @include font ($white, $font-size-xl);
+        @include font ($white, $font-size-xl, 700);
         text-transform: uppercase;
     }
 

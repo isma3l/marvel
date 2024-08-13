@@ -1,0 +1,1 @@
+export { ComicItem } from './ComicItem';

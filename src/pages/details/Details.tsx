@@ -1,17 +1,20 @@
 import { useParams } from "react-router-dom";
-import { HeroBanner, Spinner } from "@/components";
+import { ComicList, HeroBanner, Spinner } from "@/components";
 import { useGetDetailsHero } from "@/hooks";
+import * as styles from './details.module.scss';
 
 const Details = () => {
     const { heroId } = useParams();
-    const id = Number(heroId);
-    const { hero, comics, isLoading } = useGetDetailsHero(id);
+    const { hero, comics, isLoading } = useGetDetailsHero(Number(heroId));
     
     return (
-        <section>
+        <section className={styles.details}>
             { isLoading 
                 ? <Spinner />
-                : <HeroBanner hero={hero} />
+                :<>
+                    <HeroBanner hero={hero} />
+                    <ComicList comics={comics}/>
+                </>                 
             }
         </section>
     );
