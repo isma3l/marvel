@@ -15,7 +15,7 @@
         "noPropertyAccessFromIndexSignature": true,
         "noUnusedLocals": true,
         "noUnusedParameters": true,
-        "noImplicitOverride": true,
+        "noImplicitOverride": false,
         "noImplicitAny": true,
         "noImplicitReturns": true,
         "alwaysStrict": true,
@@ -45,6 +45,6 @@
           "@/*": ["./src/*"]
         }
     },
-    "include": ["src/**/*.ts", "src/**/*.tsx", "src/types/scss.d.ts", "./src/types/svg.d.ts"],
+    "include": ["src/**/*.ts", "src/**/*.tsx", "scss.d.ts", "svg.d.ts"],
     "exclude": ["node_modules", "coverage", "webpack.*.js", "dist", "./__jest__/*"]
 }

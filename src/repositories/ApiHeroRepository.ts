@@ -162,6 +162,7 @@ const getHeroById = async (heroId: number): Promise<Hero> => {
     //const heroes = await get<Hero[]>(url);
     //const { id, name, thumbnail, description = ''} = heroes[0];
     //return { id, name, thumbnail, description };
+    
     return mockHero;
 }
 

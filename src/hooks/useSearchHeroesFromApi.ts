@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react"
 import { Hero } from "@/domain";
 import { apiHeroRepository } from '@/repositories';
+import { Status } from "@/types";
 
 export const useSearchHeroresFromApi = () => {
     const [heroes, setHeroes] = useState<Hero[]>([]);
-    const [isLoading, setIsLoading] = useState<boolean>(false);
+    const [status, setStatus] = useState<Status>(Status.PENDING);
 
     useEffect(() => {
         searchHeroes();
@@ -12,17 +13,15 @@ export const useSearchHeroresFromApi = () => {
 
     const searchHeroes = async (searchName: string = '') => {
         try {
-            setIsLoading(true);
+            setStatus(Status.PENDING);
             const heroes = await apiHeroRepository.getHeroes(searchName);
             setHeroes(heroes);
+            setStatus(Status.SUCCESS);
         } catch (error) {
-            // eslint-disable-next-line no-console
-            console.error('Search Heroes:', error);
-        } finally {
-            setIsLoading(false);
+            setStatus(Status.ERROR);
         }
     } 
 
 
-    return { heroes, searchHeroes, isLoading};
+    return { heroes, searchHeroes, status};
 }
