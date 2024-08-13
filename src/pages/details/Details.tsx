@@ -1,5 +1,7 @@
 import { useParams } from "react-router-dom";
-import { ComicList, HeroBanner, Spinner } from "@/components";
+import { Spinner } from "@/components";
+import { ComicList } from "./components/comicList";
+import { HeroBanner } from './components/heroBanner';
 import { useGetDetailsHero } from "@/hooks";
 import { Status } from "@/types";
 import * as styles from './details.module.scss';
@@ -17,7 +19,8 @@ const Details = () => {
                 : (<>
                     <HeroBanner hero={hero} />
                     <ComicList comics={comics}/>
-                </>)                 
+                    </>
+                )                 
             }
         </section>
     );

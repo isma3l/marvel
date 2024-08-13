@@ -1,5 +1,5 @@
 import { Hero } from "@/domain";
-import { ToggleFavorite } from "../toggleFavorite";
+import { ToggleFavorite } from "@/components";
 import * as styles from './heroBanner.module.scss';
 
 type HeroBannerProps = {

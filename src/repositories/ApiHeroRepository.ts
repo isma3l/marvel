@@ -132,17 +132,9 @@ const getHeroes = async (name?: string): Promise<Hero[]> => {
     const searchName = name ? `&nameStartsWith=${name}` : '';
     const url = `${baseUrl}characters?limit=${LIMIT_RESULTS}${searchName}&${generateAccessKey()}`;
     
-    return get<Hero[]>(url);
-    
-    ///const heroes = await test();
-    // ->return heroes.map(hero => ({ id: hero.id, name: hero.name, thumbnail: hero.thumbnail }));
-/*     if (name) {
-        return heroes.filter(hero => hero.name.toUpperCase().includes(name.toUpperCase()));
-    } else {
-        return heroes.map(hero => ({ id: hero.id, name: hero.name, thumbnail: hero.thumbnail }));
-    } */
+    //return get<Hero[]>(url);
 
-   // return mock;
+    return mock;
    
 }
 
@@ -160,10 +152,10 @@ const getHeroById = async (heroId: number): Promise<Hero> => {
     const baseUrl = process.env['BASE_URL'];
     const url = `${baseUrl}characters/${heroId}?${generateAccessKey()}`;
         
-    const heroes = await get<Hero[]>(url);
-    return { ...heroes[0] };
+    //const heroes = await get<Hero[]>(url);
+    //return { ...heroes[0] };
     
-    //return mockHero;
+    return mockHero;
 }
 
 export const apiHeroRepository: HeroRepository = { getHeroes, getHeroById };
