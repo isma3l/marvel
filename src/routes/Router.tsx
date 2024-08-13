@@ -3,11 +3,15 @@ import { Suspense, lazy } from 'react';
 import { Paths } from './paths';
 import { MainLayout } from '@/layout';
 
-const LazyHome = lazy(
+const Home = lazy(
     () => import(/*webpackChunkName: "LazyHome"  */ '@/pages/home')
 );
 
-const LazyDetails = lazy(
+const Favorites = lazy(
+    () => import(/*webpackChunkName: "LazyHome"  */ '@/pages/favorites')
+);
+
+const Details = lazy(
     () => import(/*webpackChunkName: "LazyHome"  */ '@/pages/details')
 );
 
@@ -20,7 +24,15 @@ export const Router = createBrowserRouter([
                 index: true,
                 element: (
                     <Suspense>
-                        <LazyHome />
+                        <Home />
+                    </Suspense>
+                )
+            },
+            {
+                path: Paths.favorites,
+                element: (
+                    <Suspense>
+                        <Favorites />
                     </Suspense>
                 )
             },
@@ -28,7 +40,7 @@ export const Router = createBrowserRouter([
                 path: Paths.hero,
                 element: (
                     <Suspense>
-                        <LazyDetails />
+                        <Details />
                     </Suspense>
                 )
             }

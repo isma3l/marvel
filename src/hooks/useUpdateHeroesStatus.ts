@@ -6,7 +6,7 @@ export const useUpdateHeroesStatus = (heroes: Hero[]) => {
     const updatedHeroes = heroes.map(hero => ({ ...hero, isFavorite: isFavoriteHero(hero.id, favoriteHeroes) }));
 
     return {
-        heroes: updatedHeroes
+        updatedHeroes
     }
 }
 

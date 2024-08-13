@@ -6,10 +6,15 @@
     display: flex;
     justify-content: center;
     background: $black;
+    width: 100%;
     clip-path: polygon(0 0, 100% 0, 100% 96%, 95% 100%, 0 100%);
 
+    @include sm {
+        clip-path: polygon(0 0, 100% 0, 100% 93%, 96% 100%, 0 100%);
+    }
+
     @include md {
-        clip-path: polygon(0 0, 100% 0, 100% 91%, 98% 100%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 92%, 97% 100%, 0 100%);
     }
 
     @include xl {
@@ -18,9 +23,10 @@
 
     &__content {
         display: flex;
+        width: 100%;
         flex-direction: column;
 
-        @include md {
+        @include sm {
             flex-direction: row;
         }
 
@@ -30,12 +36,12 @@
     }
 
     &__thumWrapper{
-        height: 397px;
+        min-height: 398px;
 
-        @include md {
-            height: 278px;
-            max-width: 320px;
+        @include sm {
             flex: 1;
+            min-height: 278px;
+            max-width: 320px;
         }
     
         @include xl {
@@ -53,6 +59,11 @@
     &__contentDescription {
         padding: 24px 16px 48px 16px;
         background-color: $black;
+
+        @include sm {
+            padding: 48px;
+            flex: 2;
+        }
 
         @include md {
             padding: 48px;

@@ -12,12 +12,12 @@ const Details = () => {
 
     return (
         <section className={styles.details}>
-            { status === Status.PENDING 
-                ? <Spinner />
-                :<>
+            { status === Status.PENDING ?
+                <Spinner />
+                : (<>
                     <HeroBanner hero={hero} />
                     <ComicList comics={comics}/>
-                </>                 
+                </>)                 
             }
         </section>
     );

@@ -2,10 +2,12 @@ import { useEffect, useState } from "react"
 import { Hero } from "@/domain";
 import { apiHeroRepository } from '@/repositories';
 import { Status } from "@/types";
+import { useUpdateHeroesStatus } from "./useUpdateHeroesStatus";
 
 export const useSearchHeroresFromApi = () => {
     const [heroes, setHeroes] = useState<Hero[]>([]);
     const [status, setStatus] = useState<Status>(Status.PENDING);
+    const { updatedHeroes  } = useUpdateHeroesStatus(heroes);
 
     useEffect(() => {
         searchHeroes();
@@ -23,5 +25,5 @@ export const useSearchHeroresFromApi = () => {
     } 
 
 
-    return { heroes, searchHeroes, status};
+    return { heroes: updatedHeroes, searchHeroes, status};
 }

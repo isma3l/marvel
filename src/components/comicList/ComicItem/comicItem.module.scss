@@ -8,8 +8,8 @@
     flex-direction: column;
     width: 164px;
 
-    @include md {
-        width: 168px
+    @include sm {
+        width: 169px
     }
 
     @include xl {
@@ -21,9 +21,9 @@
         width: 164px;
         margin-bottom: 8px;
 
-        @include md {
+        @include sm {
             height: 253px;
-            width: 168px;
+            width: 169px;
         }
 
         @include xl {

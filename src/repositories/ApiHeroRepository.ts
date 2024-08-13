@@ -132,7 +132,7 @@ const getHeroes = async (name?: string): Promise<Hero[]> => {
     const searchName = name ? `&nameStartsWith=${name}` : '';
     const url = `${baseUrl}characters?limit=${LIMIT_RESULTS}${searchName}&${generateAccessKey()}`;
     
-    //return get<Hero[]>(url);
+    return get<Hero[]>(url);
     
     ///const heroes = await test();
     // ->return heroes.map(hero => ({ id: hero.id, name: hero.name, thumbnail: hero.thumbnail }));
@@ -141,7 +141,8 @@ const getHeroes = async (name?: string): Promise<Hero[]> => {
     } else {
         return heroes.map(hero => ({ id: hero.id, name: hero.name, thumbnail: hero.thumbnail }));
     } */
-    return mock;
+
+   // return mock;
    
 }
 
@@ -149,7 +150,7 @@ const mockHero: Hero = {
     id: 1017100,
     name: "A-Bomb (HAS)",
     thumbnail: {
-        path: "http://i.annihil.us/u/prod/marvel/i/mg/3/20/5232158de5b16",
+        path: "http://i.annihil.us/u/prod/marvel/i/mg/3/80/4c00358ec7548",
         extension: "jpg"
     },
     description: "Rick Jones has been Hulk's best bud since day one, but now he's more than a friend...he's a teammate! Transformed by a Gamma energy explosion, A-Bomb's thick, armored skin is just as strong and powerful as it is blue. And when he curls into action, he uses it like a giant bowling ball of destruction!"
@@ -159,11 +160,10 @@ const getHeroById = async (heroId: number): Promise<Hero> => {
     const baseUrl = process.env['BASE_URL'];
     const url = `${baseUrl}characters/${heroId}?${generateAccessKey()}`;
         
-    //const heroes = await get<Hero[]>(url);
-    //const { id, name, thumbnail, description = ''} = heroes[0];
-    //return { id, name, thumbnail, description };
+    const heroes = await get<Hero[]>(url);
+    return { ...heroes[0] };
     
-    return mockHero;
+    //return mockHero;
 }
 
 export const apiHeroRepository: HeroRepository = { getHeroes, getHeroById };

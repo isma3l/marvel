@@ -1,0 +1,22 @@
+@import 'src/styles/base/mixins';
+@import 'src/styles/base/colors';
+@import 'src/styles/base/fonts';
+
+.content {
+    max-width: 1416px;
+    padding: 24px 16px;
+    margin: auto;
+
+    @include sm {
+        padding: 48px 48px;
+    }
+
+    &__title {
+        @include font ($black, $font-size-l);
+        margin-bottom: 24px;
+
+        @include lg {
+            @include font ($black, $font-size-xl);
+        }
+    }
+}

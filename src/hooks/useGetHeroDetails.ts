@@ -22,8 +22,6 @@ export const useGetDetailsHero = (heroId: number) => {
                 setComics(comics);
                 setStatus(Status.SUCCESS);
             } catch (error) {
-                // eslint-disable-next-line no-console
-                console.error('Details Heroe:', error);
                 setStatus(Status.ERROR);
             }
         }
