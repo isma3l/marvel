@@ -8,10 +8,8 @@ type HeroListProps = {
 
 export const HeroList = ({ heroes }: HeroListProps) => {
     return (
-        <section className={styles.heroList} role='list' aria-label='heroes'>
-            {
-                heroes.map((hero) => (<HeroCard hero={hero} key={hero.id} />))
-            }
+        <section className={styles.heroList} role='list' aria-label='List of Heroes'>
+            { heroes.map((hero) => (<HeroCard hero={hero} key={hero.id} />)) }
         </section>
         
     );

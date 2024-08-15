@@ -9,7 +9,7 @@ type HeroProps = {
 
 export const HeroCard = ({ hero }: HeroProps) => {
     return (
-        <Link to={`/hero/${hero.id}`}>
+        <Link to={`/hero/${hero.id}`} role="listitem">
             <article className={styles.card}>
                 <figure className={styles.card__thumWrapper}>
                     <img src={`${hero.thumbnail.path}.${hero.thumbnail.extension}`} alt="Hero image" className={styles.card__thumbnail} />

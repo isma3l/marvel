@@ -5,7 +5,7 @@ import { generateAccessKey } from '@/helper';
 
 const LIMIT_RESULTS = 20;
 
-const mocks: Comic[] = [
+/* const mocks: Comic[] = [
     {
         id: 103120,
         title: "Who Is...? M.O.D.O.K. Infinity Comic (2023) #1",
@@ -57,14 +57,15 @@ const mocks: Comic[] = [
         },
         modified: "2019-09-07T17:10:39-0400"
     }
-];
+]; */
 
 const getComics = async (heroId: number): Promise<Comic[]> => {
     const baseUrl = process.env['BASE_URL'];
     const url = `${baseUrl}characters/${heroId}/comics?limit=${LIMIT_RESULTS}&${generateAccessKey()}`
 
-    //return get<Comic[]>(url);
-    return mocks;
+    const comics = await get<Comic[]>(url);
+    return comics.map(({ id, title, thumbnail, modified }) => ({ id, title, thumbnail, modified }));
+    //return mocks;
 }
 
 export const apiComicRepository: ComicRepository = { getComics };

@@ -3,7 +3,7 @@ import { Hero, HeroRepository } from "@/domain";
 import { generateAccessKey } from '@/helper';
 
 const LIMIT_RESULTS = 50;
-
+/*
 const mock: Hero[] = 
 [{
     "id": 1011334,
@@ -123,22 +123,21 @@ const test = async (): Promise<Hero[]> => {
         setTimeout(() => {
             r(mock);
         }, 3000);
-    });
-    
+    }); 
 }
-
+*/
 const getHeroes = async (name?: string): Promise<Hero[]> => {
     const baseUrl = process.env['BASE_URL'];
     const searchName = name ? `&nameStartsWith=${name}` : '';
     const url = `${baseUrl}characters?limit=${LIMIT_RESULTS}${searchName}&${generateAccessKey()}`;
     
-    //return get<Hero[]>(url);
-
-    return mock;
+    const heroes = await get<Hero[]>(url);
+    return heroes.map(({ id, name, thumbnail }) => ({ id, name, thumbnail }));
+    //return mock;
    
 }
 
-const mockHero: Hero = {
+/* const mockHero: Hero = {
     id: 1017100,
     name: "A-Bomb (HAS)",
     thumbnail: {
@@ -146,16 +145,17 @@ const mockHero: Hero = {
         extension: "jpg"
     },
     description: "Rick Jones has been Hulk's best bud since day one, but now he's more than a friend...he's a teammate! Transformed by a Gamma energy explosion, A-Bomb's thick, armored skin is just as strong and powerful as it is blue. And when he curls into action, he uses it like a giant bowling ball of destruction!"
-}
+} */
 
 const getHeroById = async (heroId: number): Promise<Hero> => {
     const baseUrl = process.env['BASE_URL'];
     const url = `${baseUrl}characters/${heroId}?${generateAccessKey()}`;
         
-    //const heroes = await get<Hero[]>(url);
-    //return { ...heroes[0] };
+    const heroes = await get<Hero[]>(url);
+    const { id, name, thumbnail, description = ''} = heroes[0];
+    return { id, name, thumbnail, description };
     
-    return mockHero;
+    //return mockHero;
 }
 
 export const apiHeroRepository: HeroRepository = { getHeroes, getHeroById };

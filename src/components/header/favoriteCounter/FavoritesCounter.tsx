@@ -8,10 +8,10 @@ export const FavoritesCounter = () => {
 
     return (
         <div className={styles.favoritesCounter}>
-            <Link to="/favorites" className={styles.favoritesCounter__icon}>
+            <Link to="/favorites" className={styles.favoritesCounter__icon}  aria-label='link to favorites'>
                 <FcLike size={24} />
             </Link>          
-            <span className={styles.favoritesCounter__counter}>{favoriteHeroes.length}</span>
+            <span className={styles.favoritesCounter__counter} aria-label={`${favoriteHeroes.length} favorites`}>{favoriteHeroes.length}</span>
         </div>
     );
 };

@@ -1,15 +1,14 @@
 import { useEffect, useState } from "react";
 import { Comic, Hero } from "@/domain";
 import { apiHeroRepository, apiComicRepository } from '@/repositories';
-import { useUpdateHeroStatus } from "./useUpdateHeroesStatus";
+import { useUpdateHeroListStatus } from "./useUpdateHeroListStatus";
 import { Status } from "@/types";
 
 export const useGetDetailsHero = (heroId: number) => {
     const [ hero, setHero] = useState<Hero>({} as Hero);
     const [ comics, setComics] = useState<Comic[]>([]);
     const [status, setStatus] = useState<Status>(Status.PENDING);
-    const { updadtedHero } = useUpdateHeroStatus(hero);
-
+    const { updatedHeroes: [ updatedHero ] } = useUpdateHeroListStatus([hero]);
 
     useEffect(() => {
         const getDetailsHero = async () => {
@@ -29,5 +28,5 @@ export const useGetDetailsHero = (heroId: number) => {
         getDetailsHero();
     }, []);
 
-    return { hero: updadtedHero, comics, status };
+    return { hero: updatedHero, comics, status };
 }

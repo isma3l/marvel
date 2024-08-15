@@ -15,7 +15,7 @@ const ComicList = ({ comics }: ComicListProps) => {
     return (
         <section className={styles.comics}>
             <h2 className={styles.comics__title}>COMICS</h2>
-            <div className={styles.comics__list}>
+            <div className={styles.comics__list} role='list' aria-label='List of comics'>
                 { sortedComics.map(comic => (<ComicItem  key={comic.id} comic={comic} />)) }
             </div>
         </section>

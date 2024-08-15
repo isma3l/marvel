@@ -12,22 +12,14 @@ type ToggleFavoriteProps = {
 export const ToggleFavorite = ({ size, hero }: ToggleFavoriteProps) => {
     const { addHero, removeHero } = useHeroesContext();
 
-    const onClickRemoveHero = (event: React.MouseEvent<SVGElement, MouseEvent>) => {
+    const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         event.preventDefault();
-        removeHero(hero.id);
-    }
-
-    const onClickAddHero = (event: React.MouseEvent<SVGElement, MouseEvent>) => {
-        event.preventDefault();
-        addHero(hero);
+        hero.isFavorite ? removeHero(hero.id) : addHero(hero);
     }
 
     return (
-        <div className={toggle}>
-            { hero.isFavorite 
-                ? <FcLike size={size} onClick={onClickRemoveHero}/>
-                : <FaRegHeart color="white" size={size} onClick={onClickAddHero}/>
-            }                    
-        </div>  
+        <button className={toggle} aria-label="toggle favorite" onClick={handleClick}>
+            { hero.isFavorite ? <FcLike size={size} title="favorite"/> : <FaRegHeart color="white" size={size} title="not favorite" /> }                    
+        </button>  
     );
 }

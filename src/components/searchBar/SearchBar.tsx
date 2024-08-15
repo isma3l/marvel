@@ -41,7 +41,8 @@ export const SearchBar = ({ results, onSearch }: SearchBarProps) => {
                         placeholder='SEARCH A CHARACTER...'
                         autoComplete="off"
                         className={styles.search__input}
-                        ref={inputRef} 
+                        ref={inputRef}
+                        aria-label="hero name searched"
                     />
                 </div>
                 <span className={styles.search__results}>{results} RESULTS</span>
