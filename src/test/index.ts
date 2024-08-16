@@ -1,4 +1,5 @@
-export {generateMockHeroes  } from './mockHeroes';
+export { generateMockHeroes  } from './mockHeroes';
+export { generateMockComics } from './mockComics';
 export { renderWithRouterProvider } from './renderWithRouterProvider';
-export { ProviderWrapper, mockContext } from './ProviderWrapper';
+export { ProviderWrapper, mockedStateContext } from './ProviderWrapper';
 export { RouterProviderWrapper } from './RouterProviderWrapper';

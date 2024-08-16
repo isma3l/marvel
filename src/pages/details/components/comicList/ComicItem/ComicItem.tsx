@@ -7,7 +7,7 @@ type ComicItemProps = {
 
 export const ComicItem = ({ comic }: ComicItemProps) => {
     return (
-        <div className={styles.comic}>
+        <div className={styles.comic} role="listitem">
             <figure className={styles.comic__thumWrapper}>
                 <img src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`} alt="Comic image" className={styles.comic__thumbnail} />
             </figure>

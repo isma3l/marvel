@@ -8,7 +8,8 @@ export const generateMockHeroes = (length: number): Hero[] => {
         thumbnail: {
             path: faker.image.url(),
             extension: 'jpg'
-        }
+        },
+        description: faker.person.jobDescriptor()
     }));
     
     return heroes;

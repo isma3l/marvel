@@ -2,7 +2,7 @@ import { HeroContext } from "@/context";
 import { ReactNode } from "react";
 import { Context } from '@/context/HeroesContext';
 
-export const mockContext: Context = {
+export const mockedStateContext: Context = {
     state: {
         favoriteHeroes: []
     },
@@ -12,11 +12,11 @@ export const mockContext: Context = {
 
 type PropiderWrapperProps = {
     children: ReactNode,
-    context?: Context 
+    value?: Context 
 };
 
-export const ProviderWrapper = ({ children, context = mockContext }: PropiderWrapperProps) => (
-    <HeroContext.Provider value={context}>
+export const ProviderWrapper = ({ children, value = mockedStateContext }: PropiderWrapperProps) => (
+    <HeroContext.Provider value={value}>
         {children}
     </HeroContext.Provider>
 );

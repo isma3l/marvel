@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { ToggleFavorite } from "../ToggleFavorite";
-import { generateMockHeroes, ProviderWrapper, mockContext } from "@/test";
+import { generateMockHeroes, ProviderWrapper, mockedStateContext } from "@/test";
 import userEvent from "@testing-library/user-event";
 import { Hero } from "@/domain";
 
@@ -21,7 +21,7 @@ describe('<ToogleFavorite />', () => {
 
     it('since the hero is not favorite when the icon is pressed it is added as a favorite', async () => {
         render(
-            <ProviderWrapper context={mockContext}>
+            <ProviderWrapper value={mockedStateContext}>
                 <ToggleFavorite hero={mockedHero} size={20} />
             </ProviderWrapper>
         );
@@ -31,14 +31,14 @@ describe('<ToogleFavorite />', () => {
         const button = screen.getByRole('button');
         await user.click(button);
 
-        expect(mockContext.addHero).toHaveBeenCalled();
+        expect(mockedStateContext.addHero).toHaveBeenCalled();
     });
 
     it('since the hero is favorite when the icon is pressed it is removed as a favorite', async () => {
         const favoriteHero: Hero = { ...mockedHero, isFavorite: true };
 
         render(
-            <ProviderWrapper context={mockContext}>
+            <ProviderWrapper value={mockedStateContext}>
                 <ToggleFavorite hero={favoriteHero} size={20} />
             </ProviderWrapper>
         );
@@ -48,6 +48,6 @@ describe('<ToogleFavorite />', () => {
         const button = screen.getByRole('button');
         await user.click(button);
 
-        expect(mockContext.removeHero).toHaveBeenCalled();
+        expect(mockedStateContext.removeHero).toHaveBeenCalled();
     });
 });
