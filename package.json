@@ -8,7 +8,7 @@
     "build": "webpack --config webpack.prod.config.js",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src/",
     "lint:fix": "eslint src/**/*.ts{,x} --fix",
-    "prettier-format": "prettier --write **/*.{tsx,ts}",
+    "prettier-format": "prettier --write src/**/*.{tsx,ts}",
     "test": "jest --config __jest__/jest.config.js",
     "cypress:open": "cypress open",
     "tscheck": "tsc"

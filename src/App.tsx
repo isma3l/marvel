@@ -4,9 +4,9 @@ import { HeroesProvider } from './context';
 import './styles.scss';
 
 const App = () => (
-    <HeroesProvider>
-        <RouterProvider router={Router} />
-    </HeroesProvider>
+  <HeroesProvider>
+    <RouterProvider router={Router} />
+  </HeroesProvider>
 );
 
 export default App;
