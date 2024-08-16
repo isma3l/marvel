@@ -1,33 +1,35 @@
-import { screen, render  } from '@testing-library/react';
+import { screen, render } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
 import userEvent from '@testing-library/user-event';
-import { generateMockHeroes, renderWithRouterProvider, RouterProviderWrapper } from "@/test";
-import { HeroCard } from "../HeroCard";
+import { generateMockHeroes, renderWithRouterProvider, RouterProviderWrapper } from '@/test';
+import { HeroCard } from '../HeroCard';
 
 describe('HeroCard', () => {
-    const mockedHero = generateMockHeroes(1)[0];
-    
-    it('should render a hero card', () => {
-        renderWithRouterProvider(<HeroCard hero={mockedHero} />);
+  const mockedHero = generateMockHeroes(1)[0];
 
-        expect(screen.getByRole('img'))
-            .toHaveAttribute('src', `${mockedHero.thumbnail.path}.${mockedHero.thumbnail.extension}`);
-        expect(screen.getByText(mockedHero.name)).toBeInTheDocument();
-        expect(screen.getByRole('button')).toBeInTheDocument();
-    });
+  it('should render a hero card', () => {
+    renderWithRouterProvider(<HeroCard hero={mockedHero} />);
 
-    it('clicking on herocard redirects to details', async () => {
-        const history = createMemoryHistory();
+    expect(screen.getByRole('img')).toHaveAttribute(
+      'src',
+      `${mockedHero.thumbnail.path}.${mockedHero.thumbnail.extension}`
+    );
+    expect(screen.getByText(mockedHero.name)).toBeInTheDocument();
+    expect(screen.getByRole('button')).toBeInTheDocument();
+  });
 
-        render(
-            <RouterProviderWrapper history={history}>
-                <HeroCard hero={mockedHero} />
-            </RouterProviderWrapper>
-        );
+  it('clicking on herocard redirects to details', async () => {
+    const history = createMemoryHistory();
 
-        const heroImage = screen.getByRole('img');
-        await userEvent.click(heroImage);
+    render(
+      <RouterProviderWrapper history={history}>
+        <HeroCard hero={mockedHero} />
+      </RouterProviderWrapper>
+    );
 
-        expect(history.location.pathname).toBe(`/hero/${mockedHero.id}`);
-    });
-})
+    const heroImage = screen.getByRole('img');
+    await userEvent.click(heroImage);
+
+    expect(history.location.pathname).toBe(`/hero/${mockedHero.id}`);
+  });
+});

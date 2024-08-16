@@ -5,27 +5,27 @@ import { renderWithRouterProvider, RouterProviderWrapper } from '@/test';
 import { Logo } from '../Logo';
 
 describe('<Logo />', () => {
-    it('should render a marvel logo', () => {
-        renderWithRouterProvider(<Logo />);
+  it('should render a marvel logo', () => {
+    renderWithRouterProvider(<Logo />);
 
-        const link = screen.getByRole('link');
-        expect(link.getAttribute('href')).toBe('/');
+    const link = screen.getByRole('link');
+    expect(link.getAttribute('href')).toBe('/');
 
-        expect(screen.getByRole('img')).toHaveAttribute('alt', "Marvel Logo");
-    });
+    expect(screen.getByRole('img')).toHaveAttribute('alt', 'Marvel Logo');
+  });
 
-    it('clicking on the Logo navigates to main view', async () => {
-        const history = createMemoryHistory();
+  it('clicking on the Logo navigates to main view', async () => {
+    const history = createMemoryHistory();
 
-        render(
-            <RouterProviderWrapper history={history}>
-                <Logo />
-            </RouterProviderWrapper>
-        );
+    render(
+      <RouterProviderWrapper history={history}>
+        <Logo />
+      </RouterProviderWrapper>
+    );
 
-        const link = screen.getByRole('link');
-        await userEvent.click(link);
-        
-        expect(history.location.pathname).toBe('/');
-    });
+    const link = screen.getByRole('link');
+    await userEvent.click(link);
+
+    expect(history.location.pathname).toBe('/');
+  });
 });

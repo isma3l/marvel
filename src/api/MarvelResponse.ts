@@ -1,11 +1,11 @@
 export type MarvelResponse<T> = {
-    code: number;
-    status: string;
-    data: {
-        offset: number;
-        limit: number;
-        total: number;
-        count: number;
-        results: T
-    }
-}
+  code: number;
+  status: string;
+  data: {
+    offset: number;
+    limit: number;
+    total: number;
+    count: number;
+    results: T;
+  };
+};

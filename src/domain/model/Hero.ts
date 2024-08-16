@@ -1,9 +1,9 @@
-import { Thumbnail } from "./Thumbnail";
+import { Thumbnail } from './Thumbnail';
 
 export interface Hero {
-    id: number;
-    name: string;
-    thumbnail: Thumbnail;
-    isFavorite?: boolean;
-    description?: string;
+  id: number;
+  name: string;
+  thumbnail: Thumbnail;
+  isFavorite?: boolean;
+  description?: string;
 }

@@ -6,14 +6,15 @@ import { createMemoryHistory, MemoryHistory } from 'history';
 const memoryHistory = createMemoryHistory();
 
 type RouterProviderWrapperProps = {
-    children: ReactNode,
-    history?: MemoryHistory 
+  children: ReactNode;
+  history?: MemoryHistory;
 };
 
-export const RouterProviderWrapper = ({ children, history = memoryHistory}: RouterProviderWrapperProps) => (
-    <ReactRouterDom.Router location={history.location} navigator={history}>
-        <ProviderWrapper>
-            {children}
-        </ProviderWrapper>
-    </ReactRouterDom.Router>
+export const RouterProviderWrapper = ({
+  children,
+  history = memoryHistory
+}: RouterProviderWrapperProps) => (
+  <ReactRouterDom.Router location={history.location} navigator={history}>
+    <ProviderWrapper>{children}</ProviderWrapper>
+  </ReactRouterDom.Router>
 );

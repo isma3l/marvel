@@ -5,27 +5,27 @@ import { renderWithRouterProvider, RouterProviderWrapper } from '@/test';
 import { FavoritesCounter } from '../FavoritesCounter';
 
 describe('<FavoritesCounter />', () => {
-    it('should render favorites counter', () => {
-        renderWithRouterProvider(<FavoritesCounter />);
+  it('should render favorites counter', () => {
+    renderWithRouterProvider(<FavoritesCounter />);
 
-        const link = screen.getByRole('link');
-        expect(link.getAttribute('href')).toBe('/favorites');
-        
-        expect(screen.getByText('0')).toBeInTheDocument();
-    });
+    const link = screen.getByRole('link');
+    expect(link.getAttribute('href')).toBe('/favorites');
 
-    it('clicking on the favorites icon navigates to favorite heroes', async () => {
-        const history = createMemoryHistory();
+    expect(screen.getByText('0')).toBeInTheDocument();
+  });
 
-        render(
-            <RouterProviderWrapper history={history}>
-                <FavoritesCounter />
-            </RouterProviderWrapper>
-        );
+  it('clicking on the favorites icon navigates to favorite heroes', async () => {
+    const history = createMemoryHistory();
 
-        const link = screen.getByRole('link');
-        await userEvent.click(link);
-        
-        expect(history.location.pathname).toBe('/favorites');
-    });
+    render(
+      <RouterProviderWrapper history={history}>
+        <FavoritesCounter />
+      </RouterProviderWrapper>
+    );
+
+    const link = screen.getByRole('link');
+    await userEvent.click(link);
+
+    expect(history.location.pathname).toBe('/favorites');
+  });
 });
