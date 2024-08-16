@@ -1,7 +1,7 @@
-# Aplicación Web para obtener información sobre los personajes de Marvel
+# Aplicación Web para los personajes de Marvel
 
 ### Descripción
-Se desarrollo una webapp en React para conocer más acerca de los héroes de Marvel.
+Se desarrollo una webapp en React para obtener información sobre los personajes de Marvel.
 
 La aplicación consta de dos vistas: 
 - Vista principal: 
@@ -10,7 +10,7 @@ La aplicación consta de dos vistas:
    - Al hacer click en el icono superior de favoritos se muestran los heroes favoritos almacenados
 
 - Detalle de héroes:  
-  - Se muestra informacion de un héroe y un listado de 20 comics en los que aparece
+  - Se muestra informacion de un héroe y un listado de comics en los que aparece.
 
 
 ### Bibliotecas o frameworks utilizados
@@ -110,7 +110,7 @@ Una vez que el servidor este ejecutándose, automáticamente se abrirá una vent
 #### Ejecución en modo production
 Hay que seguir dos pasos:
 
-- Ejecutar el comando `npm build`   
+- Ejecutar el comando `npm run build`   
 Como resultado se crearán los bundles optimizados y se guardaran en una nueva carpeta llamada **dist**
 
 - Desplegar la carpeta **dist** en un servidor local, ejecutando estos comandos:  
