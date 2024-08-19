@@ -119,6 +119,9 @@ Como resultado se crearán los bundles optimizados y se guardaran en una nueva c
 Esto ejecutará la app de producción en la dirección http://localhost:3000    
 Sólo queda abrir una ventana en chrome y probar la app en esa dirección.
 
+#### Aplicación desplegada en Vercel
+***Link*** a la aplicación web: https://marvel-gamma-liart.vercel.app/
+
 #### Ejecución las pruebas
 
 Los tests unitarios se ejecutan con el comando `npm test`
